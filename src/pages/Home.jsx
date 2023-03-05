@@ -29,7 +29,7 @@ function Home() {
         });
         const data = await res.json();
         if (data.success) {
-          setAllPosts(data.posts);
+          setAllPosts(data.posts.reverse());
         }
       } catch (error) {
         console.log(error);
