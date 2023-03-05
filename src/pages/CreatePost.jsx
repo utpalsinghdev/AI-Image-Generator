@@ -141,8 +141,9 @@ function CreatePost() {
         <div className="mt-5 flex gap-5">
           <button
             type="button"
+            disabled={generatingImg}
             onClick={generatingImage}
-            className="text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            className="disabled:opacity-50 disabled:cursor-not-allowed text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {generatingImg ? "Generating..." : "Generate Image"}
           </button>
@@ -154,6 +155,7 @@ function CreatePost() {
           </p>
           <button
             type="submit"
+            disabled={loading}
             className="disabled:opacity-50 disabled:cursor-not-allowed mt-5 text-white bg-blue-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
           >
             {loading ? "Sharing... " : "Share with the community"}
